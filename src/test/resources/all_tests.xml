@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All tests suite">
+
+    <test name="basic_suite">
+        <classes>
+            <class name="hw1.AdditionTest"/>
+            <class name="hw1.SubstractionTest"/>
+            <class name="hw1.MultiplicationTest"/>
+            <class name="hw1.DivisionTest"/>
+            <class name="hw1.ExponentiationTest"/>
+        </classes>
+    </test>
+
+</suite>

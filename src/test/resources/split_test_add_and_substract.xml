@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Add and substract tests">
+
+    <test name="add_substract">
+        <classes>
+            <class name="hw1.AdditionTest">
+                <methods>
+                    <include name="sumTest"/>
+                </methods>
+            </class>
+
+            <class name="hw1.SubstractionTest">
+                <methods>
+                    <include name="subTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
