@@ -47,22 +47,28 @@ public class BasicMethods {
         driver.findElement(By.xpath("//button[@id='login-button']")).click();
     }
 
-    public void checkListWebElementsSize(List<WebElement> webElements, int size){
-        assertEquals(webElements.size(),size);
+    public void checkLoginDisplayedAndCorrect() {
+        checkWebElementIsDisplayed(driver.findElement(By.id("user-name")));
+        assertEquals(driver.findElement(By.id("user-name"))
+                .getText(), "PITER CHAILOVSKII");
     }
 
-    public void checkListWebElementsIsDisplayed(List<WebElement> webElements ){
-        for(int i=0;i<webElements.size();i++){
+    public void checkListWebElementsSize(List<WebElement> webElements, int size) {
+        assertEquals(webElements.size(), size);
+    }
+
+    public void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
+        for (int i = 0; i < webElements.size(); i++) {
             checkWebElementIsDisplayed(webElements.get(i));
         }
     }
 
-    public void checkListWebElementsHaveProperText(List<WebElement> inputElements, List<String> properText){
-        List<String> actualElements=new ArrayList<>();
-        for(WebElement element: inputElements){
+    public void checkListWebElementsHaveProperText(List<WebElement> inputElements, List<String> properText) {
+        List<String> actualElements = new ArrayList<>();
+        for (WebElement element : inputElements) {
             actualElements.add(element.getText());
         }
-        assertEquals(actualElements,properText);
+        assertEquals(actualElements, properText);
     }
 
     public void checkWebElementIsDisplayed(WebElement element) {
