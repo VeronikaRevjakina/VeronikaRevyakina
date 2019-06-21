@@ -4,9 +4,9 @@ import hw2.RelatedMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class Excercise1Test extends RelatedMethods {
+public class Exercise1Test extends RelatedMethods {
     @Test
-    public void excercise1Test() {
+    public void exercise1Test() {
         // 1. Open test site by URL
         setUp();
         //2. Assert Browser title
