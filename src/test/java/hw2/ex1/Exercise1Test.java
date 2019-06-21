@@ -8,15 +8,15 @@ public class Exercise1Test extends RelatedMethods {
     @Test
     public void exercise1Test() {
         // 1. Open test site by URL
-        setUp();
+        //made in setUp();
         //2. Assert Browser title
-        checkBrowserTitleIsHomePage();
+        checkBrowserTitle("Home Page");
         //3. Perform login
         performLogin();
         //4. Assert User name in the left-top side of screen that user is loggined
         checkLoginDisplayedAndCorrect();
         //5. Assert Browser title
-        checkBrowserTitleIsHomePage();
+        checkBrowserTitle("Home Page");
         //6. Assert that there are 4 items on the header section are displayed and they have proper texts
         checkHeaderSectionElements();
         //7. Assert that there are 4 images on the Index Page and they are displayed
@@ -40,7 +40,6 @@ public class Exercise1Test extends RelatedMethods {
         //16. Assert that there is Footer
         checkWebElementIsDisplayed(driver.findElement(By.className("footer-bg")));
         //17. Close Browser
-        tearDown();
-
+        //made in tearDown();
     }
 }
