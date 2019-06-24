@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class BasicMethods {
 
@@ -71,12 +70,68 @@ public class BasicMethods {
         assertEquals(actualElements, properText);
     }
 
+    public void checkWebElementIsSelected(WebElement element){
+        assertTrue(element.isSelected());
+    }
+
+    public void checkWebElementIsUnselected(WebElement element){
+        assertFalse(element.isSelected());
+    }
+
     public void checkWebElementIsDisplayed(WebElement element) {
         assertTrue(element.isDisplayed());
     }
 
     public void checkBrowserTitle(String title) {
         assertEquals(driver.getTitle(), title);
+    }
+
+    public WebElement findCheckbox(String name){
+        return driver.findElement(By.xpath("//label[contains(string(), '" +name+"')]/input"));
+    }
+
+    public void selectCheckbox(String name){
+        findCheckbox(name).click();
+    }
+
+    public WebElement findRadio(String name){
+        return driver.findElement(By.xpath("//*[@class='label-radio' " +
+                "and contains(.,'" +name+ "')]//input"));
+    }
+
+    public WebElement findLogRow(String selectedOption, String condition){
+        return driver.findElement(By.xpath( "//ul[@class='panel-body-list logs']//li[contains(string(),'" + selectedOption + "') " +
+                "and contains(text(), '" + condition + "')]"));
+    }
+
+    public WebElement findOption(String name){
+        return driver.findElement(By.xpath("//option[contains(text(),'"+ name+"')]"));
+    }
+
+    public void checkLogRow(String selectedOption,String condition) {
+        WebElement elementLogRow=findLogRow(selectedOption, condition);
+        checkWebElementIsDisplayed(elementLogRow);
+    }
+
+    public void checkRadio(String name) {
+        WebElement radio=findRadio(name);
+        radio.click();
+        checkWebElementIsSelected(radio);
+    }
+    public void checkOption(String name) {
+        WebElement option= findOption(name);
+       option.click();
+        checkWebElementIsSelected(option);
+    }
+
+    public void checkCheckboxSelected(String name) {
+        selectCheckbox(name);
+        checkWebElementIsSelected(findCheckbox(name));
+    }
+
+    public void checkCheckboxUnselected(String name) {
+        selectCheckbox(name);
+        checkWebElementIsUnselected(findCheckbox(name));
     }
 
     //17. Close Browser

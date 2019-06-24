@@ -1,7 +1,6 @@
 package hw2.ex1;
 
 import hw2.BasicMethods;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;

@@ -19,6 +19,7 @@
     </properties>
 
     <profiles>
+
         <profile>
             <id>splitted-test-add-and-substract</id>
             <activation>
@@ -46,6 +47,16 @@
             </activation>
             <properties>
                 <suite.xml>src/test/resources/all_tests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw2.xml</suite.xml>
             </properties>
         </profile>
 
