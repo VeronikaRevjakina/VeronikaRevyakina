@@ -46,23 +46,23 @@ public class BasicMethods {
         driver.findElement(By.xpath("//button[@id='login-button']")).click();
     }
 
-    public void checkLoginDisplayedAndCorrect() {
+    protected void checkLoginDisplayedAndCorrect() {
         checkWebElementIsDisplayed(driver.findElement(By.id("user-name")));
         assertEquals(driver.findElement(By.id("user-name"))
                 .getText(), "PITER CHAILOVSKII");
     }
 
-    public void checkListWebElementsSize(List<WebElement> webElements, int size) {
+    protected void checkListWebElementsSize(List<WebElement> webElements, int size) {
         assertEquals(webElements.size(), size);
     }
 
-    public void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
+    protected void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
         for (int i = 0; i < webElements.size(); i++) {
             checkWebElementIsDisplayed(webElements.get(i));
         }
     }
 
-    public void checkListWebElementsHaveProperText(List<WebElement> inputElements, List<String> properText) {
+    protected void checkListWebElementsHaveProperText(List<WebElement> inputElements, List<String> properText) {
         List<String> actualElements = new ArrayList<>();
         for (WebElement element : inputElements) {
             actualElements.add(element.getText());
@@ -70,66 +70,67 @@ public class BasicMethods {
         assertEquals(actualElements, properText);
     }
 
-    public void checkWebElementIsSelected(WebElement element){
+    protected void checkWebElementIsSelected(WebElement element) {
         assertTrue(element.isSelected());
     }
 
-    public void checkWebElementIsUnselected(WebElement element){
+    protected void checkWebElementIsUnselected(WebElement element) {
         assertFalse(element.isSelected());
     }
 
-    public void checkWebElementIsDisplayed(WebElement element) {
+    protected void checkWebElementIsDisplayed(WebElement element) {
         assertTrue(element.isDisplayed());
     }
 
-    public void checkBrowserTitle(String title) {
+    protected void checkBrowserTitle(String title) {
         assertEquals(driver.getTitle(), title);
     }
 
-    public WebElement findCheckbox(String name){
-        return driver.findElement(By.xpath("//label[contains(string(), '" +name+"')]/input"));
+    protected WebElement findCheckbox(String name) {
+        return driver.findElement(By.xpath("//label[contains(string(), '" + name + "')]/input"));
     }
 
-    public void selectCheckbox(String name){
+    protected void selectCheckbox(String name) {
         findCheckbox(name).click();
     }
 
-    public WebElement findRadio(String name){
+    protected WebElement findRadio(String name) {
         return driver.findElement(By.xpath("//*[@class='label-radio' " +
-                "and contains(.,'" +name+ "')]//input"));
+                "and contains(.,'" + name + "')]//input"));
     }
 
-    public WebElement findLogRow(String selectedOption, String condition){
-        return driver.findElement(By.xpath( "//ul[@class='panel-body-list logs']//li[contains(string(),'" + selectedOption + "') " +
+    protected WebElement findLogRow(String selectedOption, String condition) {
+        return driver.findElement(By.xpath("//ul[@class='panel-body-list logs']//li[contains(string(),'" + selectedOption + "') " +
                 "and contains(text(), '" + condition + "')]"));
     }
 
-    public WebElement findOption(String name){
-        return driver.findElement(By.xpath("//option[contains(text(),'"+ name+"')]"));
+    protected WebElement findOption(String name) {
+        return driver.findElement(By.xpath("//option[contains(text(),'" + name + "')]"));
     }
 
-    public void checkLogRow(String selectedOption,String condition) {
-        WebElement elementLogRow=findLogRow(selectedOption, condition);
+    protected void checkLogRow(String selectedOption, String condition) {
+        WebElement elementLogRow = findLogRow(selectedOption, condition);
         checkWebElementIsDisplayed(elementLogRow);
     }
 
-    public void checkRadio(String name) {
-        WebElement radio=findRadio(name);
+    protected void checkRadio(String name) {
+        WebElement radio = findRadio(name);
         radio.click();
         checkWebElementIsSelected(radio);
     }
-    public void checkOption(String name) {
-        WebElement option= findOption(name);
-       option.click();
+
+    protected void checkOption(String name) {
+        WebElement option = findOption(name);
+        option.click();
         checkWebElementIsSelected(option);
     }
 
-    public void checkCheckboxSelected(String name) {
+    protected void checkCheckboxSelected(String name) {
         selectCheckbox(name);
         checkWebElementIsSelected(findCheckbox(name));
     }
 
-    public void checkCheckboxUnselected(String name) {
+    protected void checkCheckboxUnselected(String name) {
         selectCheckbox(name);
         checkWebElementIsUnselected(findCheckbox(name));
     }

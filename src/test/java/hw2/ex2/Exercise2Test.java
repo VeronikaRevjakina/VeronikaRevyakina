@@ -56,7 +56,7 @@ public class Exercise2Test extends BasicMethods {
         checkLogRow("Wind", "false");
     }
 
-    public void checkServiceHeaderSubcategory() {
+    private void checkServiceHeaderSubcategory() {
         driver.findElement(By.xpath("//li[@class='dropdown']//a[contains(text(), 'Service')]")).click();
         List<WebElement> serviceDropdownElements = driver.findElements(By.xpath("//*[@class='dropdown open'" +
                 "]//ul[@class='dropdown-menu']//li"));
@@ -65,7 +65,7 @@ public class Exercise2Test extends BasicMethods {
         checkListWebElementsHaveProperText(serviceDropdownElements, subcategoryText);
     }
 
-    public void checkServiceLeftSectionSubcategory() {
+    private void checkServiceLeftSectionSubcategory() {
         driver.findElement(By.xpath("//ul[@class = 'sidebar-menu']//*[text() = 'Service']")).click();
         List<WebElement> serviceDropdownElements = driver.findElements(By.xpath("//li[@class='menu-title' and contains(.//span,'Service')]//li//span"));
         List<String> subcategoryText = Arrays.asList("Support", "Dates", "Complex Table", "Simple Table", "Search", "User Table",
@@ -73,12 +73,12 @@ public class Exercise2Test extends BasicMethods {
         checkListWebElementsHaveProperText(serviceDropdownElements, subcategoryText);
     }
 
-    public void checkDropdownDifferentElements() {
+    private void checkDropdownDifferentElements() {
         driver.findElement(By.xpath("//ul[@class='dropdown-menu']//li//a[contains(text(), 'Different elements')]")).click();
         assertEquals(driver.getCurrentUrl(), "https://epam.github.io/JDI/different-elements.html");
     }
 
-    public void checkAllElementsOnDifferentElementsPage() {
+    private void checkAllElementsOnDifferentElementsPage() {
         List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
         checkListWebElementsSize(checkboxes, 4);
         List<WebElement> radios = driver.findElements(By.xpath("//input[@type='radio']"));
