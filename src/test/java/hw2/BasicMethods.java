@@ -57,9 +57,9 @@ public class BasicMethods {
     }
 
     protected void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
-        // TODO Why do you decide use fori instead of forEach--Because its convenient to use checkElementDisplayed-Skype
-        for (int i = 0; i < webElements.size(); i++) {
-            checkWebElementIsDisplayed(webElements.get(i));
+        // TODO Why do you decide use fori instead of forEach--Fixed
+        for (WebElement element : webElements) {
+            checkWebElementIsDisplayed(element);
         }
     }
 
