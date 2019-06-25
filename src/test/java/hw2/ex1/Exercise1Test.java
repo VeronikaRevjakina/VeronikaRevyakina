@@ -101,13 +101,13 @@ public class Exercise1Test extends BasicMethods {
     private void checkMainHeaders() {
         List<String> textOnMainHeaders = Arrays.asList
                 ("EPAM FRAMEWORK WISHES…",
-                "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT," +
-                        " SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE " +
-                        "MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD " +
-                        "EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
-                        "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT" +
-                        " IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT " +
-                        "NULLA PARIATUR.");
+                        "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT," +
+                                " SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE " +
+                                "MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD " +
+                                "EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
+                                "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT" +
+                                " IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT " +
+                                "NULLA PARIATUR.");
         List<WebElement> headerElements = new ArrayList<>();
         headerElements.add(driver.findElement(By.name("main-title")));
         headerElements.add(driver.findElement(By.name("jdi-text")));

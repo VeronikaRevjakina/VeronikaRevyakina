@@ -73,9 +73,9 @@ public class Exercise2Test extends BasicMethods {
         driver.findElement(By.xpath
                 ("//li[@class='dropdown']//a[contains(text(), " +
                         "'Service')]")).click();
-        List<WebElement> serviceDropdownElements = driver.findElements
-                (By.xpath("//*[@class='dropdown open'" +
-                "]//ul[@class='dropdown-menu']//li"));
+        List<WebElement> serviceDropdownElements = driver.findElements(By.xpath
+                ("//*[@class='dropdown open'" +
+                        "]//ul[@class='dropdown-menu']//li"));
         List<String> subcategoryText = Arrays.asList("SUPPORT", "DATES", "SEARCH",
                 "COMPLEX TABLE", "SIMPLE TABLE", "USER TABLE",
                 "TABLE WITH PAGES", "DIFFERENT ELEMENTS", "PERFORMANCE");
@@ -117,7 +117,7 @@ public class Exercise2Test extends BasicMethods {
         checkListWebElementsSize(dropdown, 1);
         List<WebElement> buttons = driver.findElements
                 (By.xpath("//*[@class='main-content-hg']//" +
-                "*[contains(@value, 'Button')]"));
+                        "*[contains(@value, 'Button')]"));
         checkListWebElementsSize(buttons, 2);
     }
 
