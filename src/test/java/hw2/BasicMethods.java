@@ -21,15 +21,12 @@ public class BasicMethods {
 
     @BeforeSuite
     public void setUpDriverPath() {
-        // TODO Why is set property repeated twice?
-        System.setProperty("webdriver.chrome.driver",
-                this.getClass().getClassLoader().getResource("driver/chromedriver.exe").getPath());
+        // TODO Why is set property repeated twice?--Fixed
         System.setProperty("webdriver.chrome.driver",
                 Paths.get("src/test/resources/driver/chromedriver.exe")
                         .toAbsolutePath().toString());
 
     }
-
 
     @BeforeMethod
     public void setUp() {
@@ -43,7 +40,8 @@ public class BasicMethods {
     protected void performLogin() {
         driver.findElement(By.id("user-icon")).click();
         driver.findElement(By.id("name")).sendKeys("epam");
-        driver.findElement(By.cssSelector("#password")).sendKeys("1234");
+        driver.findElement(By.cssSelector("#password")).sendKeys
+                ("1234");
         driver.findElement(By.xpath("//button[@id='login-button']")).click();
     }
 
@@ -53,18 +51,20 @@ public class BasicMethods {
                 .getText(), "PITER CHAILOVSKII");
     }
 
-    protected void checkListWebElementsSize(List<WebElement> webElements, int size) {
+    protected void checkListWebElementsSize
+            (List<WebElement> webElements, int size) {
         assertEquals(webElements.size(), size);
     }
 
     protected void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
-        // TODO Why do you decide use fori instead of forEach
+        // TODO Why do you decide use fori instead of forEach--Because its convenient to use checkElementDisplayed-Skype
         for (int i = 0; i < webElements.size(); i++) {
             checkWebElementIsDisplayed(webElements.get(i));
         }
     }
 
-    protected void checkListWebElementsHaveProperText(List<WebElement> inputElements, List<String> properText) {
+    protected void checkListWebElementsHaveProperText
+            (List<WebElement> inputElements, List<String> properText) {
         List<String> actualElements = new ArrayList<>();
         for (WebElement element : inputElements) {
             actualElements.add(element.getText());
@@ -89,7 +89,8 @@ public class BasicMethods {
     }
 
     protected WebElement findCheckbox(String name) {
-        return driver.findElement(By.xpath("//label[contains(string(), '" + name + "')]/input"));
+        return driver.findElement(By.xpath
+                ("//label[contains(string(), '" + name + "')]/input"));
     }
 
     protected void selectCheckbox(String name) {
@@ -102,12 +103,14 @@ public class BasicMethods {
     }
 
     protected WebElement findLogRow(String selectedOption, String condition) {
-        return driver.findElement(By.xpath("//ul[@class='panel-body-list logs']//li[contains(string(),'" + selectedOption + "') " +
+        return driver.findElement(By.xpath("//ul[@class='panel-body-list logs']" +
+                "//li[contains(string(),'" + selectedOption + "') " +
                 "and contains(text(), '" + condition + "')]"));
     }
 
     protected WebElement findOption(String name) {
-        return driver.findElement(By.xpath("//option[contains(text(),'" + name + "')]"));
+        return driver.findElement(By.xpath("//option[contains(text(),'"
+                + name + "')]"));
     }
 
     protected void checkLogRow(String selectedOption, String condition) {
