@@ -21,7 +21,6 @@ public class BasicMethods {
 
     @BeforeSuite
     public void setUpDriverPath() {
-        // TODO Why is set property repeated twice?--Fixed
         System.setProperty("webdriver.chrome.driver",
                 Paths.get("src/test/resources/driver/chromedriver.exe")
                         .toAbsolutePath().toString());
@@ -57,7 +56,6 @@ public class BasicMethods {
     }
 
     protected void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
-        // TODO Why do you decide use fori instead of forEach--Fixed
         for (WebElement element : webElements) {
             checkWebElementIsDisplayed(element);
         }

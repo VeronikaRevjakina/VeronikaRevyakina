@@ -11,8 +11,6 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-// TODO What is the length line of code in Java code convention?--Fixed in all files,set new setting in idea
-// TODO 70 characters for documentation and 80 for code lines,changed in project
 public class Exercise1Test extends BasicMethods {
     @Test
     public void exercise1Test() {
@@ -59,7 +57,6 @@ public class Exercise1Test extends BasicMethods {
         //made in tearDown();
     }
 
-    // TODO What is the difference between current method and checkTextOnIndexPageUnderIcons?--Skype
     private void checkHeaderSectionElements() {
         List<String> headers = Arrays.asList
                 ("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
@@ -78,10 +75,6 @@ public class Exercise1Test extends BasicMethods {
         checkListWebElementsIsDisplayed(imageElements);
     }
 
-    // TODO What is the difference between current method and checkHeaderSectionElements?--Skype
-    //Structure is kind of the same,but with different parameters,
-    // i dont think that i should create parametrized method for it bacause it would not be commonly used,
-    //could just delete this method its made more for beauty of exercise1Test() to show steps
     private void checkTextOnIndexPageUnderIcons() {
         List<String> benefitText = Arrays.asList
                 ("To include good practices\nand ideas from successful" +
@@ -96,8 +89,6 @@ public class Exercise1Test extends BasicMethods {
         checkListWebElementsHaveProperText(textElements, benefitText);
     }
 
-    // TODO What is the difference between current method and checkHeaderSectionElements?--Skype
-    //Here is no checkSize and same reasons as above
     private void checkMainHeaders() {
         List<String> textOnMainHeaders = Arrays.asList
                 ("EPAM FRAMEWORK WISHES…",
