@@ -11,7 +11,6 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-
 public class Exercise1Test extends BasicMethods {
     @Test
     public void exercise1Test() {
@@ -57,8 +56,7 @@ public class Exercise1Test extends BasicMethods {
         //17. Close Browser
         //made in tearDown();
     }
-
-
+    
     private void checkHeaderSectionElements() {
         List<String> headers = Arrays.asList
                 ("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
@@ -77,7 +75,6 @@ public class Exercise1Test extends BasicMethods {
         checkListWebElementsIsDisplayed(imageElements);
     }
 
-
     private void checkTextOnIndexPageUnderIcons() {
         List<String> benefitText = Arrays.asList
                 ("To include good practices\nand ideas from successful" +
@@ -91,7 +88,6 @@ public class Exercise1Test extends BasicMethods {
         checkListWebElementsIsDisplayed(textElements);
         checkListWebElementsHaveProperText(textElements, benefitText);
     }
-
 
     private void checkMainHeaders() {
         List<String> textOnMainHeaders = Arrays.asList
