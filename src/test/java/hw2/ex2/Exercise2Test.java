@@ -68,7 +68,6 @@ public class Exercise2Test extends BasicMethods {
         checkLogRow("Wind", "false");
     }
 
-    // TODO What is the difference between current method and checkServiceLeftSectionSubcategory?--Skype
     private void checkServiceHeaderSubcategory() {
         driver.findElement(By.xpath
                 ("//li[@class='dropdown']//a[contains(text(), " +
@@ -83,7 +82,7 @@ public class Exercise2Test extends BasicMethods {
                 (serviceDropdownElements, subcategoryText);
     }
 
-    // TODO What is the difference between current method and checkServiceHeaderSubcategory?--Skype
+
     private void checkServiceLeftSectionSubcategory() {
         driver.findElement(By.xpath
                 ("//ul[@class = 'sidebar-menu']//*[text() = 'Service']")).click();

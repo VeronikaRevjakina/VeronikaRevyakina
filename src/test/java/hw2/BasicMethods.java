@@ -57,7 +57,6 @@ public class BasicMethods {
     }
 
     protected void checkListWebElementsIsDisplayed(List<WebElement> webElements) {
-        // TODO Why do you decide use fori instead of forEach--Fixed
         for (WebElement element : webElements) {
             checkWebElementIsDisplayed(element);
         }
