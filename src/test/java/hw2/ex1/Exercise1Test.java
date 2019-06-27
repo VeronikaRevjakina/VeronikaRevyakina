@@ -56,7 +56,7 @@ public class Exercise1Test extends BasicMethods {
         //17. Close Browser
         //made in tearDown();
     }
-
+    
     private void checkHeaderSectionElements() {
         List<String> headers = Arrays.asList
                 ("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
