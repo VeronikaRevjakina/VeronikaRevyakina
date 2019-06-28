@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Exercise1Test extends BaseTest {
 
+    // TODO Java code style for the constants
     static final int expectedAmountOfImages = 4;
     static final List<String> benefitText = Arrays.asList
             ("To include good practices\nand ideas from successful" +

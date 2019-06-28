@@ -73,6 +73,7 @@ public class HomePageSteps extends BaseSteps {
         homePage.switchToDefaultContent();
     }
 
+    // TODO checkEpamLogoOnIFrame
     public void checkEpamLogoOniframe() {
         homePage.switchToIframe();
         checkWebElementIsDisplayed(homePage.getEpamLogo());
