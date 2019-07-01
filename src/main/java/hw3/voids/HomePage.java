@@ -44,13 +44,13 @@ public class HomePage extends BasePage {
         return subHeader;
     }
 
-    // TODO getIFrame
-    public WebElement getIframe() {
+    // TODO getIFrame--Fixed
+    public WebElement getIFrame() {
         return iframe;
     }
 
-    // TODO switchToIFrame
-    public void switchToIframe() {
+    // TODO switchToIFrame--Fixed
+    public void switchToIFrame() {
         driver.switchTo().frame(iframe);
     }
 

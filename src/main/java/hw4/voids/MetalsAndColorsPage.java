@@ -7,12 +7,13 @@ import hw3.enums.DifferentElements.CheckboxForces;
 import hw3.enums.DifferentElements.DropdownColors;
 import hw3.enums.DifferentElements.RadioMetals;
 import hw3.enums.DifferentElements.Vegetables;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 public class MetalsAndColorsPage extends BasePage {
 
     //Collections
-    @FindBy(id = "elements-checklist")
+    @FindBy(css = "#elements-block label")
     private ElementsCollection elements;
 
     @FindBy(css = "#summary-block label")
@@ -31,6 +32,9 @@ public class MetalsAndColorsPage extends BasePage {
     @FindBy(css = "#colors button")
     private SelenideElement colorsButton;
 
+    @FindBy(id = "calculate-button")
+    private SelenideElement calculateButton;
+
     @FindBy(css = "#metals span.caret")
     private SelenideElement metalsButton;
 
@@ -40,8 +44,8 @@ public class MetalsAndColorsPage extends BasePage {
     @FindBy(id = "submit-button")
     private SelenideElement submit;
 
-    @FindBy(css="[class='panel-body-list results'] > li ")
-    private ElementsCollection resultBlock;
+    @FindBy(css="ul[class='panel-body-list results'] ")
+    private SelenideElement resultBlock;
 
     public void clickElementByEnumValue(CheckboxForces checkboxForce) {
         elementByEnumValue(checkboxForce).click();
@@ -65,6 +69,10 @@ public class MetalsAndColorsPage extends BasePage {
 
     public void clickColorsButton() {
         colorsButton.click();
+    }
+
+    public void clickCalculateButton() {
+        calculateButton.click();
     }
 
     public void clickMetalsButton() {
@@ -99,7 +107,8 @@ public class MetalsAndColorsPage extends BasePage {
         submit.click();
     }
 
-    public SelenideElement findResultBlockValue(String option, String value) {
-        return resultBlock.findBy(Condition.text(option+value));
+    public SelenideElement findResultBlockByOption(String option) {
+        return resultBlock.find
+                (By.xpath(".//li[contains(string(),'" + option + "')]"));
     }
 }

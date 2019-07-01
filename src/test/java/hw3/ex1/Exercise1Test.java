@@ -71,7 +71,7 @@ public class Exercise1Test extends BaseTest {
         homePageSteps.checkIFrame();
         //11. Switch to the iframe and check that there is Epam logo
         // in the left top conner of iframe
-        homePageSteps.checkEpamLogoOniframe();
+        homePageSteps.checkEpamLogoOnIFrame();
         //12. Switch to original window back
         homePageSteps.switchToDefaultContent();
         //13. Assert a text of the sub header

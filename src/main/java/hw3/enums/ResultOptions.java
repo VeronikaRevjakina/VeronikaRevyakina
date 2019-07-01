@@ -2,7 +2,7 @@ package hw3.enums;
 
 public enum ResultOptions {
     SUMMARY("Summary: "),
-    ELEMENTS("Elements "),
+    ELEMENTS("Elements: "),
     COLOR("Color: "),
     METAL("Metal: "),
     VEGETABLES("Vegetables: ");

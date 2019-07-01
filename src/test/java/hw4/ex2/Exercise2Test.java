@@ -1,5 +1,6 @@
 package hw4.ex2;
 
+import com.codeborne.selenide.Condition;
 import hw3.enums.DifferentElements.CheckboxForces;
 import hw3.enums.DifferentElements.DropdownColors;
 import hw3.enums.DifferentElements.RadioMetals;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.title;
 import static org.testng.Assert.assertEquals;
@@ -80,6 +82,7 @@ public class Exercise2Test extends BaseTest {
             for (String summaryData : testDataObject.getSummary()) {
                 metalsAndColorsPage.clickSummaryByValue(summaryData);
             }
+            metalsAndColorsPage.clickCalculateButton();
         }
 
         if (testDataObject.getElements() != null) {
@@ -112,40 +115,47 @@ public class Exercise2Test extends BaseTest {
         metalsAndColorsPage.submitClick();
         //7. Check Results block output on the right-side
         if (testDataObject.getSummary() != null) {
+            int result=0;
             for (String summaryData : testDataObject.getSummary()) {
-                metalsAndColorsPage.findResultBlockValue
-                        (ResultOptions.SUMMARY.getOption(), summaryData)
-                        .isDisplayed();
+                result=result+Integer.valueOf(summaryData);
+
             }
+            metalsAndColorsPage.findResultBlockByOption
+                    (ResultOptions.SUMMARY.getOption())
+                    .shouldHave(text(String.valueOf(result)));
         }
 
         if (testDataObject.getElements() != null) {
             for (CheckboxForces elementsData : testDataObject.getElements()) {
-                metalsAndColorsPage.findResultBlockValue
-                        (ResultOptions.ELEMENTS.getOption(), elementsData.getForce())
-                        .isDisplayed();
+                metalsAndColorsPage.findResultBlockByOption
+                        (ResultOptions.ELEMENTS.getOption())
+                        .shouldHave(text(elementsData.getForce()));
+
             }
         }
 
         if (testDataObject.getColors() != null) {
             for (DropdownColors colorsData : testDataObject.getColors()) {
-                metalsAndColorsPage.findResultBlockValue
-                        (ResultOptions.COLOR.getOption(), colorsData.getColor()).isDisplayed();
+                metalsAndColorsPage.findResultBlockByOption
+                        (ResultOptions.COLOR.getOption())
+                        .shouldHave(text(colorsData.getColor()));
             }
         }
 
         if (testDataObject.getMetals() != null) {
             for (RadioMetals metalsData : testDataObject.getMetals()) {
-                metalsAndColorsPage.findResultBlockValue
-                        (ResultOptions.METAL.getOption(), metalsData.getMetal()).isDisplayed();
+                metalsAndColorsPage.findResultBlockByOption
+                        (ResultOptions.METAL.getOption())
+                        .shouldHave(text(metalsData.getMetal()));
             }
         }
 
         if (testDataObject.getVegetables() != null) {
             for (Vegetables vegetableData : testDataObject.getVegetables()) {
-                metalsAndColorsPage.findResultBlockValue
-                        (ResultOptions.VEGETABLES.getOption(), vegetableData.getVegetable())
-                        .isDisplayed();
+                metalsAndColorsPage.findResultBlockByOption
+                        (ResultOptions.VEGETABLES.getOption())
+                        .shouldHave(text(vegetableData.getVegetable()));
+
             }
         }
     }
