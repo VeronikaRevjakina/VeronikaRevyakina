@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
+    // TODO Java code style for the constants
     public static final String title = "Home Page";
 
     protected WebDriver driver;

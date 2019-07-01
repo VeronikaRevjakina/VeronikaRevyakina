@@ -44,10 +44,12 @@ public class HomePage extends BasePage {
         return subHeader;
     }
 
+    // TODO getIFrame
     public WebElement getIframe() {
         return iframe;
     }
 
+    // TODO switchToIFrame
     public void switchToIframe() {
         driver.switchTo().frame(iframe);
     }

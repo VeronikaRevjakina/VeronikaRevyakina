@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 public class Exercise2Test extends BaseTest {
 
+    // TODO Java code style for the constants
     static final String difftitle = "Different Elements";
     static final int expectedAmountOfDropdowns = 1;
     static final int expectedAmountOfButtons = 2;
