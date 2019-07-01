@@ -21,7 +21,6 @@ public class BasicMethods {
 
     @BeforeSuite
     public void setUpDriverPath() {
-        // TODO Why is set property repeated twice?--Fixed
         System.setProperty("webdriver.chrome.driver",
                 Paths.get("src/test/resources/driver/chromedriver.exe")
                         .toAbsolutePath().toString());

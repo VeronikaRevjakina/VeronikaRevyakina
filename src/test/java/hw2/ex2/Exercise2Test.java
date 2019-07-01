@@ -82,7 +82,6 @@ public class Exercise2Test extends BasicMethods {
                 (serviceDropdownElements, subcategoryText);
     }
 
-
     private void checkServiceLeftSectionSubcategory() {
         driver.findElement(By.xpath
                 ("//ul[@class = 'sidebar-menu']//*[text() = 'Service']")).click();
