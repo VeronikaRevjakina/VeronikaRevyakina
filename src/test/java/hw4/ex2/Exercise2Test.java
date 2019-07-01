@@ -1,6 +1,5 @@
 package hw4.ex2;
 
-import com.codeborne.selenide.Condition;
 import hw3.enums.DifferentElements.CheckboxForces;
 import hw3.enums.DifferentElements.DropdownColors;
 import hw3.enums.DifferentElements.RadioMetals;
@@ -115,9 +114,9 @@ public class Exercise2Test extends BaseTest {
         metalsAndColorsPage.submitClick();
         //7. Check Results block output on the right-side
         if (testDataObject.getSummary() != null) {
-            int result=0;
+            int result = 0;
             for (String summaryData : testDataObject.getSummary()) {
-                result=result+Integer.valueOf(summaryData);
+                result = result + Integer.valueOf(summaryData);
 
             }
             metalsAndColorsPage.findResultBlockByOption

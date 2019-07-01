@@ -44,7 +44,7 @@ public class MetalsAndColorsPage extends BasePage {
     @FindBy(id = "submit-button")
     private SelenideElement submit;
 
-    @FindBy(css="ul[class='panel-body-list results'] ")
+    @FindBy(css = "ul[class='panel-body-list results'] ")
     private SelenideElement resultBlock;
 
     public void clickElementByEnumValue(CheckboxForces checkboxForce) {

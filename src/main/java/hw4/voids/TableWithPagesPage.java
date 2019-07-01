@@ -30,7 +30,7 @@ public class TableWithPagesPage extends BasePage {
     }
 
     public SelenideElement findLogByValue(String value) {
-        return logs.findBy(Condition.text("new value="+ value));
+        return logs.findBy(Condition.text("new value=" + value));
     }
 
     public SelenideElement search() {
