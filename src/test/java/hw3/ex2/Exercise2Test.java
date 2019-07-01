@@ -12,14 +12,14 @@ import org.testng.annotations.Test;
 
 public class Exercise2Test extends BaseTest {
 
-    // TODO Java code style for the constants
-    static final String difftitle = "Different Elements";
-    static final int expectedAmountOfDropdowns = 1;
-    static final int expectedAmountOfButtons = 2;
-    static final String conditionTrue = "true";
-    static final String conditionFalse = "true";
-    static final String radioOption = "metal";
-    static final String dropdownOption = "Colors";
+    // TODO Java code style for the constants--Fixed
+    static final String DIFFERENT_ELEMENTS = "Different Elements";
+    static final int EXPECTED_AMOUNT_OF_DROPDOWNS = 1;
+    static final int EXPECTED_AMOUNT_OF_BUTTONS = 2;
+    static final String CONDITION_TRUE = "true";
+    static final String CONDITION_FALSE = "true";
+    static final String RADIO_OPTION = "metal";
+    static final String DROPDOWN_OPTION = "Colors";
 
     HomePageSteps homePageSteps;
     DifferentElementsPageSteps diffElemPageSteps;
@@ -37,7 +37,7 @@ public class Exercise2Test extends BaseTest {
         // 1. Open test site by URL
         //made in setUp();
         //2. Assert Browser title
-        homePageSteps.checkPageTitle(title);
+        homePageSteps.checkPageTitle(TITLE);
         //3. Perform login
         User user = readUserDataFromFile
                 ("src/test/resources//properties/user.properties");
@@ -52,12 +52,12 @@ public class Exercise2Test extends BaseTest {
         // drop down contains options
         diffElemPageSteps.checkServiceLeftSectionSubcategory();
         //7. Open through the header menu Service -> Different Elements Page
-        diffElemPageSteps.openDifferentElementsHeaderMenu(difftitle);
+        diffElemPageSteps.openDifferentElementsHeaderMenu(DIFFERENT_ELEMENTS);
         //8. Check interface on Different elements page, it contains
         // all needed elements
         diffElemPageSteps.
                 checkAllElementsOnDifferentElementsPage
-                        (expectedAmountOfDropdowns, expectedAmountOfButtons);
+                        (EXPECTED_AMOUNT_OF_DROPDOWNS, EXPECTED_AMOUNT_OF_BUTTONS);
         //9. Assert that there is Right Section
         diffElemPageSteps.checkRightSectionExist();
         //10. Assert that there is Left Section
@@ -68,30 +68,30 @@ public class Exercise2Test extends BaseTest {
         //12. Assert that for each checkbox there is an individual log
         // row and value is corresponded to the status of checkbox.
         diffElemPageSteps.checkLogRow
-                (CheckboxForces.WATER.getForce(), conditionTrue);
+                (CheckboxForces.WATER.getForce(), CONDITION_TRUE);
         diffElemPageSteps.checkLogRow
-                (CheckboxForces.WIND.getForce(), conditionTrue);
+                (CheckboxForces.WIND.getForce(), CONDITION_TRUE);
         //13. Select radio
         diffElemPageSteps.selectRadio(RadioMetals.SELEN);
         //14. Assert that for radiobutton there is a log row and value
         // is corresponded to the status of radiobutton.
         diffElemPageSteps.checkLogRow
-                (radioOption, RadioMetals.SELEN.getMetal());
+                (RADIO_OPTION, RadioMetals.SELEN.getMetal());
         //15. Select in dropdown
         diffElemPageSteps.selectDropdown(DropdownColors.YELLOW);
         //16. Assert that for dropdown there is a log row and value
         // is corresponded to the selected value.
         diffElemPageSteps.checkLogRow
-                (dropdownOption, DropdownColors.YELLOW.getColor());
+                (DROPDOWN_OPTION, DropdownColors.YELLOW.getColor());
         //17. Unselect and assert checkboxes
         diffElemPageSteps.unselectCheckbox(CheckboxForces.WATER);
         diffElemPageSteps.unselectCheckbox(CheckboxForces.WIND);
         //18. Assert that for each checkbox there is an individual
         // log row and value is corresponded to the status of checkbox.
         diffElemPageSteps.checkLogRow
-                (CheckboxForces.WATER.getForce(), conditionFalse);
+                (CheckboxForces.WATER.getForce(), CONDITION_FALSE);
         diffElemPageSteps.checkLogRow
-                (CheckboxForces.WIND.getForce(), conditionFalse);
+                (CheckboxForces.WIND.getForce(), CONDITION_FALSE);
     }
 
 }

@@ -18,16 +18,16 @@ import static org.testng.Assert.assertEquals;
 
 public class Exercise1Test extends BaseTest {
 
-    static final String titleTableWithPages = "Table with pages";
-    static final String searchOption = "Custom";
+    static final String TABLE_WITH_PAGES = "Table with pages";
+    static final String SEARCH_OPTION = "Custom";
 
     @Test
     public void exercise1Test() {
         // 1. Open test site by URL
         BasePage basePage = open
-                (mainJDILink, BasePage.class);
+                (MAIN_JDI_LINK, BasePage.class);
         //2. Assert Browser title
-        assertEquals(title(), title);
+        assertEquals(title(), TITLE);
         //3. Perform login
         User user = readUserDataFromFile
                 ("src/test/resources//properties/user.properties");
@@ -51,7 +51,7 @@ public class Exercise1Test extends BaseTest {
         basePage.clickServiceDropdownOption
                 (ServiceDropdownOptions.TABLE_WITH_PAGES);
         TableWithPagesPage tableWithPagesPage = new TableWithPagesPage();
-        assertEquals(title(), titleTableWithPages);
+        assertEquals(title(), TABLE_WITH_PAGES);
         //8. Check that default value for “Show entries” dropdown is 5
         tableWithPagesPage.dropdownShowEntriesLength().
                 shouldHave(text(ShowEntries.FIVE.getEntry()));
@@ -73,9 +73,9 @@ public class Exercise1Test extends BaseTest {
         tableWithPagesPage.tableEntries().
                 shouldHaveSize(Integer.valueOf(selectedDropdownValue));
         //14. Type in “Search” text field
-        tableWithPagesPage.search().setValue(searchOption).pressEnter();
+        tableWithPagesPage.search().setValue(SEARCH_OPTION).pressEnter();
         //15. Assert the table contains only records with Search field value
         tableWithPagesPage.tableEntries().
-                forEach(elem -> elem.shouldHave(text(searchOption)));
+                forEach(elem -> elem.shouldHave(text(SEARCH_OPTION)));
     }
 }

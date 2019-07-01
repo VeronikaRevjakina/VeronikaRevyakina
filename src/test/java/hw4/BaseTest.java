@@ -13,8 +13,8 @@ import static com.codeborne.selenide.Selenide.close;
 
 public class BaseTest {
 
-    public static final String title = "Home Page";
-    public static final String mainJDILink = "https://epam.github.io/JDI";
+    public static final String TITLE = "Home Page";
+    public static final String MAIN_JDI_LINK = "https://epam.github.io/JDI";
 
     @BeforeMethod
     public void setUp() {

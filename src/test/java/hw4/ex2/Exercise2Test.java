@@ -23,7 +23,7 @@ import static org.testng.Assert.assertEquals;
 
 public class Exercise2Test extends BaseTest {
 
-    static final String titleMetalsAndColorsPage = "Metal and Colors";
+    static final String TITLE_METALS_AND_COLORS_PAGE = "Metal and Colors";
 
     @DataProvider(name = "test data builder")
     public static Object[][] testDataBuilderProvider() {
@@ -65,9 +65,9 @@ public class Exercise2Test extends BaseTest {
     @Test(dataProvider = "test data builder")
     public void exercise2Test(MetalsAndColorsData testDataObject) {
         // 1. Open test site by URL
-        BasePage basePage = open(mainJDILink, BasePage.class);
+        BasePage basePage = open(MAIN_JDI_LINK, BasePage.class);
         //2. Assert Browser title
-        assertEquals(title(), title);
+        assertEquals(title(), TITLE);
         //3. Perform login
         User user = readUserDataFromFile
                 ("src/test/resources//properties/user.properties");
@@ -75,7 +75,7 @@ public class Exercise2Test extends BaseTest {
         //4.Click on the link on the Header section
         basePage.clickMenuHeaderSectionElement(Menu.METALS_AND_COLORS);
         MetalsAndColorsPage metalsAndColorsPage = new MetalsAndColorsPage();
-        assertEquals(title(), titleMetalsAndColorsPage);
+        assertEquals(title(), TITLE_METALS_AND_COLORS_PAGE);
         //5. Fill form on the page
         if (testDataObject.getSummary() != null) {
             for (String summaryData : testDataObject.getSummary()) {

@@ -11,15 +11,15 @@ import java.util.List;
 
 public class Exercise1Test extends BaseTest {
 
-    // TODO Java code style for the constants
-    static final int expectedAmountOfImages = 4;
-    static final List<String> benefitText = Arrays.asList
+    // TODO Java code style for the constants--Fixed
+    static final int EXPECTED_AMOUNT_OF_IMAGES = 4;
+    static final List<String> BENEFIT_TEXT = Arrays.asList
             ("To include good practices\nand ideas from successful" +
                             "\nEPAM project",
                     "To be flexible and\ncustomizable", "To be multiplatform",
                     "Already have good base\n(about 20 internal and\n" +
                             "some external projects),\nwish to get more…");
-    static final List<String> textOnMainHeaders = Arrays.asList
+    static final List<String> TEXT_ON_MAIN_HEADERS = Arrays.asList
             ("EPAM FRAMEWORK WISHES…",
                     "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT,"+
                     " SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE " +
@@ -28,8 +28,8 @@ public class Exercise1Test extends BaseTest {
                     "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT" +
                     " IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT " +
                       "NULLA PARIATUR.");
-    static final String subHeader = "JDI GITHUB";
-    static final String jdiLink = "https://github.com/epam/JDI";
+    static final String SUB_HEADER = "JDI GITHUB";
+    static final String JDI_LINK = "https://github.com/epam/JDI";
 
     HomePageSteps homePageSteps;
 
@@ -45,7 +45,7 @@ public class Exercise1Test extends BaseTest {
         // 1. Open test site by URL
         //made in setUp();
         //2. Assert Browser title
-        homePageSteps.checkPageTitle(title);
+        homePageSteps.checkPageTitle(TITLE);
         //3. Perform login
         User user = readUserDataFromFile
                 ("src/test/resources//properties/user.properties");
@@ -55,18 +55,18 @@ public class Exercise1Test extends BaseTest {
         homePageSteps.checkLoginDisplayedAndCorrect
                 (user.getExpectedUserName());
         //5. Assert Browser title
-        homePageSteps.checkPageTitle(title);
+        homePageSteps.checkPageTitle(TITLE);
         //6. Assert that there are 4 items on the header section are
         // displayed and they have proper texts
         homePageSteps.checkMenuHeaderSectionElements();
         //7. Assert that there are 4 images on the Index Page and
         // they are displayed
-        homePageSteps.checkImageElementsOnIndexPage(expectedAmountOfImages);
+        homePageSteps.checkImageElementsOnIndexPage(EXPECTED_AMOUNT_OF_IMAGES);
         //8. Assert that there are 4 texts on the Index Page
         // under icons and they have proper text
-        homePageSteps.checkTextOnIndexPageUnderIcons(benefitText);
+        homePageSteps.checkTextOnIndexPageUnderIcons(BENEFIT_TEXT);
         //9. Assert a text of the main headers
-        homePageSteps.checkMainHeaders(textOnMainHeaders);
+        homePageSteps.checkMainHeaders(TEXT_ON_MAIN_HEADERS);
         //10. Assert that there is the iframe in the center of page
         homePageSteps.checkIFrame();
         //11. Switch to the iframe and check that there is Epam logo
@@ -75,9 +75,9 @@ public class Exercise1Test extends BaseTest {
         //12. Switch to original window back
         homePageSteps.switchToDefaultContent();
         //13. Assert a text of the sub header
-        homePageSteps.checkSubHeader(subHeader);
+        homePageSteps.checkSubHeader(SUB_HEADER);
         //14. Assert that JDI GITHUB is a link and has a proper URL
-        homePageSteps.checkJDIGITHUBisLinkAndHaveProperUrl(jdiLink);
+        homePageSteps.checkJDIGITHUBisLinkAndHaveProperUrl(JDI_LINK);
         //15. Assert that there is Left Section
         homePageSteps.checkLeftSectionExist();
         //16. Assert that there is Footer

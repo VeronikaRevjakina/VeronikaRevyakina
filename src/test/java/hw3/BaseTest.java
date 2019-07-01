@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    // TODO Java code style for the constants
-    public static final String title = "Home Page";
+    // TODO Java code style for the constants--Fixed
+    public static final String TITLE = "Home Page";
 
     protected WebDriver driver;
     protected HomePage hp;
