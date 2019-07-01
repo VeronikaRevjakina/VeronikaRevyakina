@@ -117,7 +117,6 @@ public class Exercise2Test extends BaseTest {
             int result = 0;
             for (String summaryData : testDataObject.getSummary()) {
                 result = result + Integer.valueOf(summaryData);
-
             }
             metalsAndColorsPage.findResultBlockByOption
                     (ResultOptions.SUMMARY.getOption())

@@ -16,8 +16,11 @@ public class MetalsAndColorsPage extends BasePage {
     @FindBy(css = "#elements-block label")
     private ElementsCollection elements;
 
-    @FindBy(css = "#summary-block label")
-    private ElementsCollection summary;
+    @FindBy(css="#odds-selector > p")
+    private ElementsCollection summaryOdds;
+
+    @FindBy(css="#even-selector > p")
+    private ElementsCollection summaryEven;
 
     @FindBy(css = "#colors li > a")
     private ElementsCollection colors;
@@ -88,7 +91,11 @@ public class MetalsAndColorsPage extends BasePage {
     }
 
     public SelenideElement summaryByValue(String value) {
-        return summary.findBy(Condition.text(value));
+        if (Integer.valueOf(value) % 2 == 0) {
+            return summaryEven.findBy(Condition.text(value));
+        } else {
+            return summaryOdds.findBy(Condition.text(value));
+        }
     }
 
     public SelenideElement colorByEnumValue(DropdownColors color) {
