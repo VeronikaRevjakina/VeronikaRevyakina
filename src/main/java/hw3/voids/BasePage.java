@@ -31,14 +31,14 @@ public abstract class BasePage {
     @FindBy(css = "[class='uui-navigation nav navbar-nav m-l8']>li")
     private List<WebElement> menuHeaderSectionElements;
 
-    @FindBy(name="navigation-sidebar")
+    @FindBy(name = "navigation-sidebar")
     private WebElement leftSection;
 
     @FindBy(className = "footer-bg")
     private WebElement footer;
 
     @FindBy(xpath = "//li[@class='menu-title' and contains(.//span,'Service')]" +
-            "//li//span" )
+            "//li//span")
     private List<WebElement> dropDownLeftService;
 
     @FindBy(xpath = "//li[@class='dropdown']//a[contains(text(), " +
@@ -62,7 +62,7 @@ public abstract class BasePage {
         loginButton.click();
     }
 
-    public void switchToDefaultContent(){
+    public void switchToDefaultContent() {
         driver.switchTo().defaultContent();
     }
 
@@ -97,7 +97,7 @@ public abstract class BasePage {
         return dropDownLeftService;
     }
 
-    public List<WebElement> getMenuHeaderSectionElements(){
+    public List<WebElement> getMenuHeaderSectionElements() {
         return menuHeaderSectionElements;
     }
 

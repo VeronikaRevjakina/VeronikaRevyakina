@@ -70,6 +70,16 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>hw4</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw4.xml</suite.xml>
+            </properties>
+        </profile>
+
     </profiles>
 
     <dependencies>
@@ -85,6 +95,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.8</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.2.3</version>
         </dependency>
 
         <dependency>
