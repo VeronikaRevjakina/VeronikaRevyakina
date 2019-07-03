@@ -2,6 +2,7 @@ package hw3.steps;
 
 import hw3.enums.Menu;
 import hw3.voids.HomePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,6 +29,7 @@ public class HomePageSteps extends BaseSteps {
         homePage.performLogin(userName, password);
     }
 
+    @Step("Check user name {0}")
     public void checkLoginDisplayedAndCorrect(String expectedName) {
         assertEquals(homePage.getUserNameText().toLowerCase(),
                 expectedName.toLowerCase());
@@ -69,6 +71,7 @@ public class HomePageSteps extends BaseSteps {
         checkWebElementIsDisplayed(homePage.getIFrame());
     }
 
+    @Step("Natigate to Home Page")
     public void switchToDefaultContent() {
         homePage.switchToDefaultContent();
     }

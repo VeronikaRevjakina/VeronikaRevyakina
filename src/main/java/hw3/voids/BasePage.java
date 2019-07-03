@@ -2,6 +2,7 @@ package hw3.voids;
 
 import hw3.enums.Menu;
 import hw3.enums.ServiceDropdownOptions;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,6 +56,7 @@ public abstract class BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Login as user")
     public void performLogin(String name, String password) {
         userIcon.click();
         userName.sendKeys(name);
