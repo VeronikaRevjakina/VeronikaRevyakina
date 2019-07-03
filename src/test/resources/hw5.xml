@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Exercise1 and Exercise1 Fail tests for Allure and Jenkins">
+
+    <test name="hw5">
+        <classes>
+            <class name="hw3.ex1.Exercise1Test">
+                <methods>
+                    <include name="exercise1Test"/>
+                </methods>
+            </class>
+
+            <class name="hw3.ex2.Exercise2Test">
+                <methods>
+                    <include name="exercise2Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
