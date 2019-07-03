@@ -6,6 +6,7 @@ import hw3.enums.DifferentElements.RadioMetals;
 import hw3.enums.Menu;
 import hw3.enums.ServiceDropdownOptions;
 import hw3.voids.DifferentElementsPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -22,6 +23,8 @@ public class DifferentElementsPageSteps extends BaseSteps {
         diffElPage = new DifferentElementsPage(driver);
     }
 
+    @Step("Click on Service subcategory in the Left Section and check that" +
+            "      drop down contains options")
     public void checkServiceLeftSectionSubcategory() {
         diffElPage.clickMenuHeaderSectionElement(Menu.SERVICE);
         List<WebElement> menuLeft = diffElPage.getDropDownLeftService();
@@ -29,6 +32,8 @@ public class DifferentElementsPageSteps extends BaseSteps {
         checkListWebElementsHaveProperText(menuLeft, expectedServiceDropdown);
     }
 
+    @Step("Click on Service subcategory in the header and check that" +
+            "      drop down contains options")
     public void checkServiceHeaderSectionSubcategory() {
         diffElPage.clickServiceHeader();
         List<WebElement> menuHeader = diffElPage.getDropDownHeaderService();
@@ -36,6 +41,7 @@ public class DifferentElementsPageSteps extends BaseSteps {
         checkListWebElementsHaveProperText(menuHeader, expectedServiceDropdown);
     }
 
+    @Step("Open through the header menu Service -> Different Elements Page")
     public void openDifferentElementsHeaderMenu(String expectedTitle) {
         diffElPage.clickServiceHeader();
         diffElPage.clickServiceDropdownOption
@@ -43,6 +49,8 @@ public class DifferentElementsPageSteps extends BaseSteps {
         assertEquals(diffElPage.getPageTitle(), expectedTitle);
     }
 
+    @Step("Check interface on Different elements page, it contains" +
+            "        all needed elements")
     public void checkAllElementsOnDifferentElementsPage
             (int expectedAmountOfDropdowns, int expectedAmountOfButtons) {
         checkListWebElementsSize
@@ -55,38 +63,45 @@ public class DifferentElementsPageSteps extends BaseSteps {
                 (diffElPage.getButtons(), expectedAmountOfButtons);
     }
 
+    @Step("Assert that there is Right Section")
     public void checkRightSectionExist() {
         checkWebElementIsDisplayed(diffElPage.getRightSection());
     }
 
+    @Step("Assert that there is Left Section")
     public void checkLeftSectionExist() {
         checkWebElementIsDisplayed(diffElPage.getLeftSection());
     }
 
+    @Step("Select checkboxes")
     public void selectCheckbox(CheckboxForces checkboxForce) {
         diffElPage.clickCheckboxByEnumValue(checkboxForce);
         checkWebElementIsSelected
                 (diffElPage.getCheckboxByEnumValue(checkboxForce));
     }
 
+    @Step("Unselect checkbox")
     public void unselectCheckbox(CheckboxForces checkboxForce) {
         diffElPage.clickCheckboxByEnumValue(checkboxForce);
         checkWebElementIsUnselected
                 (diffElPage.getCheckboxByEnumValue(checkboxForce));
     }
 
+    @Step("Select radio")
     public void selectRadio(RadioMetals radioMetal) {
         diffElPage.clickRadioByEnumValue(radioMetal);
         checkWebElementIsSelected
                 (diffElPage.getRadioByEnumValue(radioMetal));
     }
 
+    @Step("Select dropdown")
     public void selectDropdown(DropdownColors dropdownColor) {
         diffElPage.clickDropdownByEnumValue(dropdownColor);
         checkWebElementIsSelected
                 (diffElPage.getDropdownByEnumValue(dropdownColor));
     }
 
+    @Step("Check Log Row")
     public void checkLogRow(String selectedOption, String condition) {
         WebElement elementLogRow = diffElPage.
                 findLogRow(selectedOption, condition);
