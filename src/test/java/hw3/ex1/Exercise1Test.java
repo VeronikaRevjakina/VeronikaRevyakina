@@ -1,14 +1,19 @@
 package hw3.ex1;
 
+import hw3.AllureAttachmentListener;
 import hw3.BaseTest;
 import hw3.steps.HomePageSteps;
 import hw3.utils.User;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Listeners(AllureAttachmentListener.class)
 public class Exercise1Test extends BaseTest {
 
     // TODO Java code style for the constants--Fixed
@@ -40,6 +45,8 @@ public class Exercise1Test extends BaseTest {
         homePageSteps = new HomePageSteps(driver);
     }
 
+    @Feature(value = "hw3 Exercise1 and Exercise2 tests in PageObject ans Step Patterns")
+    @Story(value = "Test ex1 success")
     @Test
     public void exercise1Test() {
         // 1. Open test site by URL

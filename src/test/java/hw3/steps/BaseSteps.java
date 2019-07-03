@@ -1,5 +1,6 @@
 package hw3.steps;
 
+import hw3.TestProvider;
 import hw3.enums.ServiceDropdownOptions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class BaseSteps {
 
     public BaseSteps(WebDriver driver) {
         this.driver = driver;
+        TestProvider.getInstance().setDriver(driver);
     }
 
     protected void checkListWebElementsSize
@@ -33,7 +35,7 @@ public class BaseSteps {
         }
     }
 
-    public List<String> getExpectedServiceDropdown(){
+    public List<String> getExpectedServiceDropdown() {
         return ServiceDropdownOptions.getListStringServiceDropdown();
     }
 
@@ -52,13 +54,12 @@ public class BaseSteps {
         for (WebElement element : inputElements) {
             actualElements.add(element.getText().toLowerCase());
         }
-        for(String value:properText){
+        for (String value : properText) {
             expectedText.add(value.toLowerCase());
         }
         assertTrue(actualElements.containsAll(expectedText));
         //assertEquals(actualElements, expectedText);
     }
-
 
 
 }

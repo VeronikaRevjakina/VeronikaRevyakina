@@ -1,5 +1,6 @@
 package hw3.ex2;
 
+import hw3.AllureAttachmentListener;
 import hw3.BaseTest;
 import hw3.enums.DifferentElements.CheckboxForces;
 import hw3.enums.DifferentElements.DropdownColors;
@@ -7,9 +8,13 @@ import hw3.enums.DifferentElements.RadioMetals;
 import hw3.steps.DifferentElementsPageSteps;
 import hw3.steps.HomePageSteps;
 import hw3.utils.User;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(AllureAttachmentListener.class)
 public class Exercise2Test extends BaseTest {
 
     // TODO Java code style for the constants--Fixed
@@ -32,6 +37,8 @@ public class Exercise2Test extends BaseTest {
         diffElemPageSteps = new DifferentElementsPageSteps(driver);
     }
 
+    @Feature(value = "hw3 Exercise1 and Exercise2 tests in PageObject ans Step Patterns")
+    @Story(value = "Test ex2 success")
     @Test
     public void exercise2Test() {
         // 1. Open test site by URL
